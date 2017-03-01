@@ -24,10 +24,10 @@ Module.register("mmm-systemtemperature",{
 		var wrapper = document.createElement("div");
 
 		// Do unit any conversions
-		if(this.temperature!='fetching ...' && this.config.unit.toLowerCase()!='c') {
-			if(this.config.unit.toLowerCase()=='f')
+		if(this.temperature!=='fetching ...' && this.config.unit.toLowerCase()!=='c') {
+			if(this.config.unit.toLowerCase()==='f')
 				this.temperature = parseFloat(this.temperature) * 9 / 5 + 32;
-			else if(this.config.unit.toLowerCase()=='k')
+			else if(this.config.unit.toLowerCase()==='k')
 				this.temperature = parseFloat(this.temperature) - 273.15;
 
 			// Round off the temperature to 2 decimal places
@@ -36,7 +36,7 @@ Module.register("mmm-systemtemperature",{
 
 
 		// Append &deg; + unit
-		if(this.temperature!='fetching ...')
+		if(this.temperature!=='fetching ...')
 			this.temperature += '&deg;'+this.config.unit.toUpperCase();
 
 		wrapper.innerHTML = this.config.prependString + this.temperature;
